@@ -1,9 +1,17 @@
 # 🎥 Visio-diagnostic-simple
 
-Outil de diagnostic WebRTC pour [visio.numerique.gouv.fr](https://visio.numerique.gouv.fr) — version autonome, sans backend, un seul fichier HTML.
+Outil de diagnostic WebRTC pour tester la connectivité vers [visio.numerique.gouv.fr](https://visio.numerique.gouv.fr).
+
+Version autonome — **un seul fichier HTML, aucune dépendance, aucune installation**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-ready-blue)](https://pages.github.com)
+
+---
+
+## Démonstration
+
+👉 **[Accéder à l'outil en ligne](https://joelcha.github.io/visio-diagnostic-simple)**
 
 ---
 
@@ -16,22 +24,24 @@ Outil de diagnostic WebRTC pour [visio.numerique.gouv.fr](https://visio.numeriqu
 | Candidats ICE | STUN public (srflx), TURN relay, local (host) |
 | Export journal | Téléchargement du rapport en `.txt` |
 
-> Les tests TCP/UDP sur les ports exacts (7881, 50000–60000…) nécessitent la [version complète avec backend Node.js](https://github.com/<votre-user>/visio-diagnostic).
+> Les tests TCP/UDP sur les ports exacts (7881, 50000–60000…) nécessitent la [version complète avec backend Node.js](https://github.com/joelcha/visio-diagnostic).
 
 ---
 
 ## Utilisation
 
-### Option 1 — GitHub Pages (recommandé)
+### En ligne
 
-Accessible directement sur `https://<user>.github.io/visio-diagnostic-simple` — aucune installation.
+Ouvrez directement l'outil : **[joelcha.github.io/visio-diagnostic-simple](https://joelcha.github.io/visio-diagnostic-simple)**
 
-### Option 2 — En local via un serveur HTTP
+Aucune installation requise.
 
-> ⚠️ Ne pas ouvrir `index.html` en double-clic (`file://`) — les tests HTTPS vers des domaines externes seront bloqués par le navigateur.
+### En local
+
+> ⚠️ Ne pas ouvrir `index.html` en double-cliquant dessus — les tests seront bloqués par le navigateur en protocole `file://`. Il faut le servir via un serveur HTTP local :
 
 ```bash
-# Python
+# Python (disponible par défaut sur Linux/macOS)
 python3 -m http.server 8080
 # puis ouvrir http://localhost:8080
 
@@ -39,40 +49,35 @@ python3 -m http.server 8080
 npx serve .
 ```
 
----
+### Sur votre propre serveur ou GitHub Pages
 
-## Déploiement sur GitHub Pages
+Copiez simplement `index.html` à la racine de votre hébergement ou de votre dépôt GitHub Pages.
 
-1. Forkez ou clonez ce repo
-2. Settings → Pages → Source : **Deploy from branch `main`**
-3. C'est en ligne en 2 minutes
-
----
-
-## Structure
-
-```
-visio-diagnostic-simple/
-├── index.html   ← tout-en-un, aucune dépendance
-├── LICENSE
-└── README.md
-```
+Pour GitHub Pages : Settings → Pages → Source : branch `main` → Save.
 
 ---
 
 ## Débogage WebRTC
+
+Si les tests ICE échouent, consultez les logs WebRTC de votre navigateur :
 
 - **Chrome** : `chrome://webrtc-internals/`
 - **Firefox** : `about:webrtc`
 
 ---
 
+## Contribuer
+
+Les contributions sont les bienvenues — issues, pull requests, suggestions.
+
+---
+
 ## Contact
 
-📧 [reseau-visio@numerique.gouv.fr](mailto:reseau-visio@numerique.gouv.fr)
+📧 [reseau-visio@numerique.gouv.fr](mailto:joe;@jchastagnier.fr)
 
 ---
 
 ## Licence
 
-[MIT](LICENSE)
+[MIT](LICENSE) — libre d'utilisation, modification et redistribution, y compris à des fins commerciales.
