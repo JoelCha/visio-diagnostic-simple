@@ -74,7 +74,7 @@ Les contributions sont les bienvenues — issues, pull requests, suggestions.
 
 ## Contact
 
-📧 [reseau-visio@numerique.gouv.fr](mailto:joe;@jchastagnier.fr)
+📧 [joel@jchastagnier.fr](mailto:joel@jchastagnier.fr)
 
 ---
 
